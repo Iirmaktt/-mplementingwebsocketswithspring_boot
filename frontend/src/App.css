@@ -1,0 +1,29 @@
+.App {
+  min-height: 100vh;
+  padding: 20px;
+  /* Temporarily simplified for debugging */
+}
+
+.container {
+  /* Temporarily simplified for debugging */
+}
+
+.header {
+  /* Temporarily simplified for debugging */
+}
+
+.error-message {
+  background: rgba(244, 67, 54, 0.2);
+  color: #ffcdd2;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 20px;
+  border: 1px solid rgba(244, 67, 54, 0.3);
+  backdrop-filter: blur(10px);
+  z-index: 5;
+  position: relative;
+}
+
+.error-message strong {
+  color: #ffcdd2;
+} 
