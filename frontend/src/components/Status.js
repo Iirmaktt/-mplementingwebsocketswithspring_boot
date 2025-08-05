@@ -1,5 +1,5 @@
 import React from 'react';
-import './Status.css';
+import '../styles/Status.css';
 
 const Status = ({ connected, messageCount, totalShapes, movingShapes, lastUpdate }) => {
   return (

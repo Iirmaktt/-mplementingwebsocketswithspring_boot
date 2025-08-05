@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import { CANVAS_CONFIG, SHAPE_CONFIG } from '../utils/constants';
 import { validateShape } from '../utils/shapeUtils';
-import './ShapeCanvas.css';
+import '../styles/ShapeCanvas.css';
 
 const ShapeCanvas = ({ shapes = [], width = CANVAS_CONFIG.DEFAULT_WIDTH, height = CANVAS_CONFIG.DEFAULT_HEIGHT }) => {
   const canvasRef = useRef(null);

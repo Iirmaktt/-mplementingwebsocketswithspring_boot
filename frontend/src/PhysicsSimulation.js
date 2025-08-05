@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import SockJS from 'sockjs-client';
-import './PhysicsSimulation.css';
+import './styles/PhysicsSimulation.css';
 
 // Use global Stomp from CDN
 const Stomp = window.Stomp;

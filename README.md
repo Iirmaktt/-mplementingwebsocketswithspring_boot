@@ -1,120 +1,118 @@
-# SimSoft Shape Controller
+# SimSoft - Physics Simulation Project
 
-A Spring Boot application that provides REST endpoints for managing shape configurations.
-
-## Endpoints
-
-### 1. Set Shapes
-**GET** `/api/setShapes`
-
-Sets the number of circles, rectangles, and triangles.
-
-**Parameters:**
-- `circles` (optional, default: 0) - Number of circles
-- `rects` (optional, default: 0) - Number of rectangles  
-- `triangles` (optional, default: 0) - Number of triangles
-
-**Example:**
-```
-GET /api/setShapes?circles=4&rects=5&triangles=3
-```
-
-**Response:**
-```json
-{
-  "circles": 4,
-  "rects": 5,
-  "triangles": 3,
-  "message": "Shapes set successfully: 4 circles, 5 rectangles, 3 triangles"
-}
-```
-
-### 2. Get Current Shapes
-**GET** `/api/getShapes`
-
-Retrieves the current shape configuration.
-
-**Example:**
-```
-GET /api/getShapes
-```
-
-**Response:**
-```json
-{
-  "circles": 4,
-  "rects": 5,
-  "triangles": 3,
-  "message": "Shapes set successfully: 4 circles, 5 rectangles, 3 triangles"
-}
-```
-
-### 3. Get Total Shapes
-**GET** `/api/getTotalShapes`
-
-Returns the total number of shapes.
-
-**Example:**
-```
-GET /api/getTotalShapes
-```
-
-**Response:**
-```json
-{
-  "totalShapes": 12,
-  "message": "Total shapes: 12"
-}
-```
-
-## Running the Application
-
-1. Make sure you have Java 17+ installed
-2. Run the application:
-   ```bash
-   ./mvnw spring-boot:run
-   ```
-3. The application will start on `http://localhost:8080`
-4. Access the test page at `http://localhost:8080/index.html`
-
-## Testing
-
-You can test the endpoints using:
-
-1. **Web Interface**: Visit `http://localhost:8080/index.html` for a simple web interface
-2. **cURL**:
-   ```bash
-   curl "http://localhost:8080/api/setShapes?circles=4&rects=5&triangles=3"
-   curl "http://localhost:8080/api/getShapes"
-   curl "http://localhost:8080/api/getTotalShapes"
-   ```
-3. **Browser**: Directly visit the URLs in your browser
+A real-time physics simulation application with a React frontend and Spring Boot backend.
 
 ## Project Structure
 
 ```
-src/main/java/com/nazli/simsoft/
-├── SimsoftApplication.java          # Main application class
-├── controller/
-│   └── ShapeController.java        # REST controller for shape endpoints
-└── service/
-    └── ShapeService.java           # Business logic for shape operations
+simsoft/
+├── frontend/          # React frontend application
+├── backend/           # Spring Boot backend application
+├── docs/             # Project documentation
+└── README.md         # This file
 ```
+
+## Quick Start
+
+### Backend Setup
+
+1. Navigate to the backend directory:
+   ```bash
+   cd backend
+   ```
+
+2. Build and run the Spring Boot application:
+   ```bash
+   mvn spring-boot:run
+   ```
+
+The backend will start on `http://localhost:8080`
+
+### Frontend Setup
+
+1. Navigate to the frontend directory:
+   ```bash
+   cd frontend
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm start
+   ```
+
+The frontend will start on `http://localhost:3000`
 
 ## Features
 
-- ✅ GET endpoints for shape management
-- ✅ Parameter validation (no negative values)
-- ✅ Error handling
-- ✅ Service layer for business logic
-- ✅ Web interface for testing
-- ✅ JSON responses
-- ✅ Default parameter values
+- **Real-time Physics Simulation**: Shapes move with realistic physics
+- **WebSocket Communication**: Real-time updates between frontend and backend
+- **REST API**: HTTP endpoints for shape management
+- **Interactive Controls**: User-friendly interface for controlling the simulation
+- **Responsive Design**: Works on different screen sizes
 
-## Future Enhancements
+## Architecture
 
-- Database persistence for shape configurations
-- WebSocket support for real-time updates
-- Additional shape types
-- Shape processing and visualization
-- Authentication and authorization 
+### Backend (Spring Boot)
+- REST API endpoints for shape configuration
+- WebSocket support for real-time simulation
+- Physics simulation engine
+- Global exception handling
+- Clean architecture with proper separation of concerns
+
+### Frontend (React)
+- Real-time shape rendering
+- WebSocket connection management
+- Interactive controls
+- Responsive UI design
+
+## API Documentation
+
+### REST Endpoints
+- `GET /api/setShapes` - Configure shape counts
+- `GET /api/getShapes` - Get current shape configuration
+- `GET /api/getTotalShapes` - Get total shape count
+
+### WebSocket
+- Endpoint: `/ws/shapes`
+- Topics: `/topic/shapes`
+- Real-time shape updates
+
+## Development
+
+### Backend Development
+See [backend/README.md](backend/README.md) for detailed backend documentation.
+
+### Frontend Development
+See [frontend/README.md](frontend/README.md) for detailed frontend documentation.
+
+## Technologies Used
+
+### Backend
+- Spring Boot 3.5.4
+- Spring WebSocket
+- Maven
+- Java 17
+- Lombok
+
+### Frontend
+- React
+- WebSocket client
+- CSS3
+- JavaScript ES6+
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests if applicable
+5. Submit a pull request
+
+## License
+
+This project is licensed under the MIT License. 
