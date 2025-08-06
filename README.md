@@ -103,6 +103,7 @@ The frontend will start on `http://localhost:3000`
 - **REST API**: HTTP endpoints for shape management
 - **Interactive Controls**: User-friendly interface for controlling the simulation
 - **Responsive Design**: Works on different screen sizes
+- **Docker Support**: Easy deployment with Docker Compose
 
 ## Architecture
 

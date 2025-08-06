@@ -354,7 +354,8 @@ docker-compose up -d --scale frontend=2
 simsoft/
 ├── docker-compose.yml          # Main compose file
 ├── backend/
-│   ├── Dockerfile             # Backend container
+│   ├── Dockerfile.simple      # Backend container (simplified)
+│   ├── Dockerfile             # Alternative multi-stage build
 │   ├── .dockerignore          # Backend ignore file
 │   └── pom.xml               # Maven configuration
 ├── frontend/

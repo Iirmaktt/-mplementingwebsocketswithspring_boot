@@ -16,6 +16,9 @@ public class PhysicsSimulationService {
 
     @Autowired
     private SimpMessagingTemplate messagingTemplate;
+    
+    @Autowired
+    private PanelConfigService panelConfigService;
 
     private final Map<String, Shape> shapes = new ConcurrentHashMap<>();
     private final AtomicInteger shapeIdCounter = new AtomicInteger(0);
@@ -47,8 +50,10 @@ public class PhysicsSimulationService {
 
     private void createShape(String type) {
         String id = "shape_" + shapeIdCounter.getAndIncrement();
-        double x = Math.random() * (Constants.PANEL_WIDTH - 50) + 25;
-        double y = Math.random() * (Constants.PANEL_HEIGHT - 50) + 25;
+        double panelWidth = panelConfigService.getWidth();
+        double panelHeight = panelConfigService.getHeight();
+        double x = Math.random() * (panelWidth - 50) + 25;
+        double y = Math.random() * (panelHeight - 50) + 25;
         double size = Constants.MIN_SIZE + Math.random() * (Constants.MAX_SIZE - Constants.MIN_SIZE);
         
         Shape shape = new Shape(id, type, x, y, size);
@@ -59,7 +64,7 @@ public class PhysicsSimulationService {
     public void updateSimulation() {
         // Update all moving shapes
         for (Shape shape : shapes.values()) {
-            shape.updatePosition(Constants.DELTA_TIME, Constants.PANEL_WIDTH, Constants.PANEL_HEIGHT);
+            shape.updatePosition(Constants.DELTA_TIME, panelConfigService.getWidth(), panelConfigService.getHeight());
         }
         
         // Check if it's time to rotate which shapes are moving

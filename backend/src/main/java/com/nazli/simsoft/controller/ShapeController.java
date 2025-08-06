@@ -16,7 +16,7 @@ public class ShapeController {
     @Autowired
     private ShapeService shapeService;
 
-    @GetMapping("/setShapes")
+   /* @GetMapping("/setShapes")
     public ResponseEntity<ShapeResponse> setShapes(
             @RequestParam(defaultValue = "0") int circles,
             @RequestParam(defaultValue = "0") int rects,
@@ -25,7 +25,7 @@ public class ShapeController {
         ShapeConfiguration config = shapeService.setShapes(circles, rects, triangles);
         ShapeResponse response = new ShapeResponse(config.getCircles(), config.getRects(), config.getTriangles());
         return ResponseEntity.ok(response);
-    }
+    } */
 
     @GetMapping("/getShapes")
     public ResponseEntity<ShapeResponse> getShapes() {

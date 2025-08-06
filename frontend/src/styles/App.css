@@ -1,29 +1,35 @@
-.App {
+/* App Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: #0a0a0a;
+  color: white;
+  overflow-x: hidden;
+}
+
+.app {
   min-height: 100vh;
-  padding: 20px;
-  /* Temporarily simplified for debugging */
+  width: 100%;
 }
 
-.container {
-  /* Temporarily simplified for debugging */
+/* Remove default button and input styles */
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
 
-.header {
-  /* Temporarily simplified for debugging */
+input {
+  border: none;
+  outline: none;
 }
 
-.error-message {
-  background: rgba(244, 67, 54, 0.2);
-  color: #ffcdd2;
-  padding: 15px;
-  border-radius: 10px;
-  margin-top: 20px;
-  border: 1px solid rgba(244, 67, 54, 0.3);
-  backdrop-filter: blur(10px);
-  z-index: 5;
-  position: relative;
-}
-
-.error-message strong {
-  color: #ffcdd2;
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
 } 

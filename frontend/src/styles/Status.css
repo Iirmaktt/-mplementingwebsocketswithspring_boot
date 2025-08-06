@@ -1,3 +1,5 @@
+/* Status Component Styles - Controls the appearance of the status panel showing connection and statistics */
+
 .status {
   background: rgba(255, 255, 255, 0.1);
   padding: 15px;
@@ -11,6 +13,12 @@
 
 .status-header {
   margin-bottom: 15px;
+}
+
+.status-header h3 {
+  margin: 0;
+  color: #4ECDC4;
+  font-size: 1.5rem;
 }
 
 .connection-status {
@@ -75,4 +83,11 @@
   opacity: 0.8;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  margin-bottom: 5px;
+}
+
+.stat-subtitle {
+  font-size: 11px;
+  opacity: 0.6;
+  color: #cccccc;
 } 

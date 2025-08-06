@@ -2,7 +2,7 @@ services:
   backend:
     build:
       context: ./backend
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.simple
     container_name: simsoft-backend
     ports:
       - "8080:8080"

@@ -2,8 +2,8 @@
 
 // Canvas configuration
 export const CANVAS_CONFIG = {
-  DEFAULT_WIDTH: 800,
-  DEFAULT_HEIGHT: 600,
+  DEFAULT_WIDTH: 800, // Fallback default
+  DEFAULT_HEIGHT: 600, // Fallback default
   GRID_SIZE: 50,
   BACKGROUND_COLOR: 'rgba(0, 0, 0, 0.3)',
   GRID_COLOR: 'rgba(255, 255, 255, 0.1)',
@@ -42,7 +42,9 @@ export const WEBSOCKET_CONFIG = {
   DESTINATIONS: {
     INITIALIZE: '/app/initializeShapes',
     RESET: '/app/reset',
-    GET_SHAPES: '/app/getShapes'
+    GET_SHAPES: '/app/getShapes',
+    GET_PANEL_CONFIG: '/app/getPanelConfig',
+    SET_PANEL_SIZE: '/app/setPanelSize'
   },
   RECONNECT_DELAY: 5000,
   HEARTBEAT_INTERVAL: 10000

@@ -10,7 +10,7 @@ public class ShapeService {
 
     private ShapeConfiguration currentConfiguration = new ShapeConfiguration(0, 0, 0);
 
-    public ShapeConfiguration setShapes(int circles, int rects, int triangles) {
+    /*public ShapeConfiguration setShapes(int circles, int rects, int triangles) {
         // Validate input parameters
         if (circles < 0 || rects < 0 || triangles < 0) {
             throw new IllegalArgumentException("Shape counts cannot be negative");
@@ -20,7 +20,7 @@ public class ShapeService {
         currentConfiguration = new ShapeConfiguration(circles, rects, triangles);
         
         return currentConfiguration;
-    }
+    } */
 
     public ShapeConfiguration getCurrentShapes() {
         return currentConfiguration;

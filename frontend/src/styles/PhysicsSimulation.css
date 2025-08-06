@@ -1,157 +1,110 @@
+/* Physics Simulation Main Styles */
 .physics-simulation {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0;
-  padding: 20px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
   min-height: 100vh;
-}
-
-.physics-simulation .container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.physics-simulation .header {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.physics-simulation .header h1 {
-  margin: 0 0 10px 0;
-  font-size: 2.5rem;
-}
-
-.physics-simulation .header p {
-  margin: 0;
-  font-size: 1.1rem;
-  opacity: 0.9;
-}
-
-.physics-simulation .controls {
-  background: rgba(255, 255, 255, 0.1);
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  color: white;
   padding: 20px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  backdrop-filter: blur(10px);
+  font-family: 'Arial', sans-serif;
 }
 
-.physics-simulation .control-group {
-  display: inline-block;
-  margin: 0 20px;
-}
-
-.physics-simulation label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-}
-
-.physics-simulation input[type="number"] {
-  width: 80px;
-  padding: 8px;
-  border: none;
-  border-radius: 5px;
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
-}
-
-.physics-simulation input[type="number"]::placeholder {
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.physics-simulation button {
-  background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin: 5px;
-  font-weight: bold;
-  transition: transform 0.2s;
-}
-
-.physics-simulation button:hover:not(:disabled) {
-  transform: translateY(-2px);
-}
-
-.physics-simulation button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.physics-simulation .canvas-container {
+.header {
   text-align: center;
-  margin: 20px 0;
+  margin-bottom: 30px;
 }
 
-.physics-simulation #simulationCanvas {
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  border-radius: 10px;
-  background: rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(5px);
-}
-
-.physics-simulation .status {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 15px;
-  border-radius: 10px;
-  margin-top: 20px;
-  backdrop-filter: blur(10px);
-}
-
-.physics-simulation .connection-status {
-  display: inline-block;
-  padding: 5px 10px;
-  border-radius: 15px;
-  font-weight: bold;
-  margin-left: 10px;
-}
-
-.physics-simulation .connection-status.connected {
-  background: #4CAF50;
-}
-
-.physics-simulation .connection-status.disconnected {
-  background: #f44336;
-}
-
-.physics-simulation .stats {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 15px;
-  margin-top: 20px;
-}
-
-.physics-simulation .stat-card {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 15px;
-  border-radius: 10px;
-  text-align: center;
-  backdrop-filter: blur(5px);
-}
-
-.physics-simulation .stat-value {
-  font-size: 24px;
+.header h1 {
+  font-size: 2.5rem;
   font-weight: bold;
   color: #4ECDC4;
+  margin: 0;
+  text-shadow: 0 0 20px rgba(78, 205, 196, 0.3);
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
-  .physics-simulation .control-group {
-    display: block;
-    margin: 10px 0;
-  }
-  
-  .physics-simulation .stats {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .physics-simulation #simulationCanvas {
-    width: 100%;
-    max-width: 800px;
+.main-content {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  grid-template-rows: 1fr auto;
+  gap: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  height: calc(100vh - 120px);
+}
+
+.controls-panel {
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.canvas-panel {
+  grid-row: 1 / 2;
+  grid-column: 2 / 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 20px;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.simulation-canvas {
+  border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  background: #000;
+  border: 2px solid rgba(78, 205, 196, 0.3);
+}
+
+.status-panel {
+  grid-row: 2 / 3;
+  grid-column: 1 / 3;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .main-content {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
     height: auto;
+  }
+  
+  .controls-panel {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+  }
+  
+  .canvas-panel {
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+    min-height: 500px;
+  }
+  
+  .status-panel {
+    grid-row: 3 / 4;
+    grid-column: 1 / 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .physics-simulation {
+    padding: 10px;
+  }
+  
+  .header h1 {
+    font-size: 2rem;
+  }
+  
+  .controls-panel {
+    padding: 15px;
+  }
+  
+  .canvas-panel {
+    padding: 10px;
   }
 } 
